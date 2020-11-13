@@ -2,5 +2,40 @@
   "home": {
 	"title": "Coming Soon !",
 	"text": ""
+  },
+  "common": {
+	"language": "Langue",
+	"copyright": "© 2020 Copyright",
+	"me": {
+	  "name": "Thomas SIMON",
+	  "email": "thomas.simon4205@gmail.com"
+	},
+	"firstname": "Prénom",
+	"lastname": "Nom",
+	"email": "Email",
+	"password": "Mot de passe",
+	"birthday": "Date de naissance",
+	"address": "Adresse",
+	"phone": "Tel",
+	"action": "Action",
+	"yes": "Oui",
+	"no": "Non",
+	"club": "Club",
+	"myAccount": "Mon Compte",
+	"profil": "Profile",
+	"logout": "Déconnexion",
+	"form": {
+	  "search": "Rechercher",
+	  "batch": {
+		"confirm": "Comfirmer",
+		"erase": {
+		  "confirm": "Veuillez confirmer que vous êtes sur de vouloir supprimer la selection courante."
+		}
+	  }
+	}
+  },
+  "login": {
+	"login": "Connexion",
+	"error": "Erreur lors de l'authentification"
   }
 }
