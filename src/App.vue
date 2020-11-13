@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <div class="login-box">
+      <AuthWrapper/>
+    </div>
     <div id="page">
       <router-view/>
     </div>
@@ -8,7 +11,11 @@
 
 <script>
 
+import AuthWrapper from "@/components/auth/AuthWrapper";
+
+
 export default {
+
   name: 'App',
   metaInfo() {
     return {
@@ -18,6 +25,11 @@ export default {
         {name: 'robots', content: 'noindex'}
       ]
     }
+  },
+  props: {
+  },
+  components: {
+    AuthWrapper
   }
 }
 </script>
@@ -45,5 +57,12 @@ export default {
       color: #42b983;
     }
   }
+}
+
+.login-box
+{
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
 </style>
