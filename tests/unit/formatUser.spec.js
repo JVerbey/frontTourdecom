@@ -30,4 +30,15 @@ describe("formatUser", () => {
 			displayName: "jim@example.com"
 		});
 	});
+
+	it("takes token into account", () => {
+		expect(formatUser({
+			email: "jim@example.com",
+			access_token: "itscomingrightforus!"
+		})).toEqual({
+			email: "jim@example.com",
+			displayName: "jim@example.com",
+			access_token: "itscomingrightforus!"
+		});
+	});
 });

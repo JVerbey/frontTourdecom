@@ -19,11 +19,12 @@ function getDisplayName(user) {
 /**
  * @param {Object} user
  *
- * @return {Object}
+ * @return {{access_token: (Object.access_token|string), displayName: String, email: string | string}}
  */
 export default function formatUser(user) {
 	return {
 		email: user.email,
-		displayName: getDisplayName(user)
+		displayName: getDisplayName(user),
+		access_token: user.access_token
 	};
 }

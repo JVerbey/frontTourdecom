@@ -6,23 +6,16 @@ import { BootstrapVue, IconsPlugin,BootstrapVueIcons, BButton } from 'bootstrap-
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import i18n from './i18n'
 import VueMeta from 'vue-meta'
-import getMockStrategy from "@/services/strategies/getMockStrategy";
-import authPlugin from "@/plugins/authPlugin";
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
+Vue.use(VueAxios, axios)
+const token = localStorage.getItem('access_token')
+if (token) {
+	axios.defaults.headers.common['Authorization'] = token
+}
 
 Vue.use(VueMeta)
-Vue.use(authPlugin, {
-	strategy: getMockStrategy([
-		{
-			email: "jim@example.com",
-			password: "j1m"
-		},
-		{
-			email: "bob@example.com",
-			password: "b0b"
-		}
-	])
-});
 
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons,BButton)

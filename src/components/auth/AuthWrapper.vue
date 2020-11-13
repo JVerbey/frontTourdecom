@@ -1,36 +1,24 @@
 <template>
   <div>
-    <div v-if="this.$auth.user">
-      {{this.$auth.user.displayName}} -
-      <button type="button" @click="this.$auth.logout">Log out</button>
+    <div v-if="this.$store.getters.isAuthenticated">
+      <b-button  @click="logout">{{$t('common.logout')}}</b-button>
     </div>
-    <LoginForm v-else :errorMessage="errorMessage" @submit="login" />
+    <LoginForm v-else/>
   </div>
 </template>
 
 <script>
+import {AUTH_LOGOUT} from "@/store/actions/auth";
 import LoginForm from "@/components/auth/LoginForm";
 
 export default {
-
+  name: "AuthWrapper",
   props: {
   },
-  data() {
-    return {
-      errorMessage: ""
-    };
-  },
   methods: {
-    login({ email, password }) {
-      this.$auth.login(email, password).then(() => {
-        if (!this.$auth.user) {
-          this.errorMessage = "Authentication failed, please try again";
-        }
-      });
+    logout: function () {
+      this.$store.dispatch(AUTH_LOGOUT)
     }
-  },
-  created() {
-    this.$auth.init();
   },
   components: { LoginForm }
 };
