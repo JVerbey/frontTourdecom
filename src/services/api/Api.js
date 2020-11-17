@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export default() => {
 	return axios.create({
-		baseURL: process.env.BACK_END_URL,
+		baseURL: process.env.VUE_APP_BACK_END_URL,
 		withCredentials: false,
 		headers: {
 			'Accept': 'application/json',
