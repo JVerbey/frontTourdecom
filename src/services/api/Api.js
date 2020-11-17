@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 export default() => {
-	console.warn(process.env.VUE_APP_BACK_END_URL);
 	return axios.create({
 		baseURL: process.env.VUE_APP_BACK_END_URL,
 		withCredentials: false,
